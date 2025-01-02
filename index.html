@@ -4,10 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
-  <link ref="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  
+  <button id="newBook">New Book</button>
+  <div class="cardContainer">
+  </div>
+  <dialog id="addBook">
+    <form id="bookForm">
+      <p>
+        <label for="bookTitle">
+          Title:
+          <br>
+        <input type="text" id="bookTitle">
+        </label>
+      </p>
+      <p>
+        <label for="bookAuthor">
+          Author:
+          <br>
+        <input type="text" id="bookAuthor">
+        </label>
+      </p>
+      <p>
+        <label for="bookPages">
+          Title:
+          <br>
+        <input type="text" id="bookPages">
+        </label>
+      </p>
+      <p>
+        <button id="cancel" formmethod="dialog">Cancel</button>
+        <button id="confirm">Confirm</button>
+      </p>
+    </form>
+  </dialog>
 </body>
 </html>

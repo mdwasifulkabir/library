@@ -1,0 +1,13 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+.bookCard {
+  background: rgb(212, 241, 234);
+  padding: 1.5rem;
+  height: 100px;
+  width: 200px;
+  box-shadow: 0 5px 30px -10px rgba(0, 0, 0, 0.4);
+}
