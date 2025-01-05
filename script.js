@@ -45,24 +45,33 @@ displayCards();
 
 function displayCards() {
   cardContainer.replaceChildren();
-  myLibrary.forEach(function(book){
+  myLibrary.forEach(function(book, index){
     var bookCard = document.createElement("div");
     var booktitle = document.createElement("div");
     var bookauthor = document.createElement("div");
     var bookpages = document.createElement("div");
 
-    const readToggle = document.createAttribute("button");
+    const readToggle = document.createElement("button");
     const removeButton = document.createElement("button");
     readToggle.id = "readToggle";
     removeButton.id = "removeButton";
 
+    removeButton.addEventListener("click", () => {
+      myLibrary.splice(index, 1);
+      displayCards();
+    });
+
     booktitle.textContent = "Title: " + book.title;
     bookauthor.textContent = "Author: " + book.author;
     bookpages.textContent = "Pages: " + book.pages;
+    readToggle.textContent = "Read";
+    removeButton.textContent = "Remove";
 
     bookCard.appendChild(booktitle);
     bookCard.appendChild(bookauthor);
     bookCard.appendChild(bookpages);
+    bookCard.appendChild(removeButton);
+    bookCard.appendChild(readToggle);
     bookCard.classList.add("bookCard");
 
     cardContainer.appendChild(bookCard);
