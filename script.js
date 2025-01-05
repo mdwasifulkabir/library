@@ -33,7 +33,7 @@ confirmButton.addEventListener("click", (event) => {
   const title = document.querySelector("#bookTitle").value;
   const author = document.querySelector("#bookAuthor").value;
   const pages = document.querySelector("#bookPages").value;
-  const read = document.querySelector("#read").value;
+  const read = document.querySelector("#read").checked;
   
   addBookToLibrary(title,author,pages,read);
   displayCards();
@@ -61,10 +61,15 @@ function displayCards() {
       displayCards();
     });
 
+    readToggle.addEventListener("click", () => {
+      myLibrary[index].read = !(myLibrary[index].read);
+      readToggle.textContent = readToggle.textContent == "Read" ? "Not Read" : "Read";
+    });
+
     booktitle.textContent = "Title: " + book.title;
     bookauthor.textContent = "Author: " + book.author;
     bookpages.textContent = "Pages: " + book.pages;
-    readToggle.textContent = "Read";
+    readToggle.textContent = book.read ? "Read" : "Not Read";
     removeButton.textContent = "Remove";
 
     bookCard.appendChild(booktitle);
