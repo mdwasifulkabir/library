@@ -64,12 +64,14 @@ function displayCards() {
     readToggle.addEventListener("click", () => {
       myLibrary[index].read = !(myLibrary[index].read);
       readToggle.textContent = readToggle.textContent == "Read" ? "Not Read" : "Read";
+      readToggle.style.backgroundColor = book.read ? "#6cebea" : "#ffe159"
     });
 
     booktitle.textContent = "Title: " + book.title;
     bookauthor.textContent = "Author: " + book.author;
     bookpages.textContent = "Pages: " + book.pages;
     readToggle.textContent = book.read ? "Read" : "Not Read";
+    readToggle.style.backgroundColor = book.read ? "#6cebea" : "#ffe159"
     removeButton.textContent = "Remove";
 
     bookCard.appendChild(booktitle);
