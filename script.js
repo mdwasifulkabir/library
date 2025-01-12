@@ -34,6 +34,11 @@ confirmButton.addEventListener("click", (event) => {
   const author = document.querySelector("#bookAuthor").value;
   const pages = document.querySelector("#bookPages").value;
   const read = document.querySelector("#read").checked;
+
+  if(title == "" || author == ""){
+    alert("Must include a title and author");
+    return
+  }
   
   addBookToLibrary(title,author,pages,read);
   displayCards();
